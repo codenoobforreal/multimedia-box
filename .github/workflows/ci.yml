@@ -37,6 +37,8 @@ jobs:
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
         run: pnpm install
+      - name: install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
       - name: run ci script
         run: pnpm run ci
       - name: release
